@@ -26,10 +26,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cards/languages.svg cards/hours.svg cards/monthly.svg
+          git add cards/profile.svg
           if git diff --staged --quiet; then
             echo "no changes"
           else
-            git commit -m "Update sidebar cards"
+            git commit -m "Update profile card"
             git push
           fi

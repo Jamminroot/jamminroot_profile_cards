@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { renderCVMarkdown, renderCVSvg, type Timeline } from "../src/render.js";
+import { renderCVMarkdown, type Timeline } from "../src/render.js";
 
 // Hand-crafted first iteration of the CV, compiled from public commit data.
 // The LLM workflow regenerates this in the same shape on manual dispatch.
@@ -92,6 +92,7 @@ const timeline: Timeline = {
 };
 
 await mkdir(resolve("cards"), { recursive: true });
-await writeFile(resolve("cards/cv.svg"), renderCVSvg(timeline), "utf8");
+await writeFile(resolve("cards/cv.json"), JSON.stringify(timeline, null, 2), "utf8");
 await writeFile(resolve("CV.md"), renderCVMarkdown(timeline), "utf8");
-console.log("seed CV written: cards/cv.svg + CV.md");
+console.log("seeded cards/cv.json + CV.md");
+console.log("now run `npm run cards` to render cards/profile.svg");
