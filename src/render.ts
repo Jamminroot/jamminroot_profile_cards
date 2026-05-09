@@ -1,13 +1,13 @@
 import type { ProfileData, ContributionDay, RepoData } from "./github.js";
 
 const T = {
-  bg: "#0d1117",
-  panel: "#161b22",
-  border: "#30363d",
-  fg: "#e6edf3",
-  muted: "#7d8590",
-  accent: "#58a6ff",
-  accent2: "#3fb950",
+  bg: "#ffffff",
+  panel: "#f6f8fa",
+  border: "#d0d7de",
+  fg: "#1f2328",
+  muted: "#656d76",
+  accent: "#0969da",
+  accent2: "#1f883d",
 };
 
 const FONT_CSS = `text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }`;

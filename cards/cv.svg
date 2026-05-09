@@ -1,75 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1074" width="600" height="1074" role="img" aria-label="Recent activity timeline">
   <style>text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }</style>
-  <rect x="0" y="0" width="600" height="1074" rx="8" ry="8" fill="#0d1117"/>
-  <rect x="0.5" y="0.5" width="599" height="1073" rx="8" ry="8" fill="none" stroke="#30363d"/>
-  <text x="28" y="42" fill="#e6edf3" font-size="16" font-weight="700">Recent activity</text>
-  <text x="572" y="42" fill="#7d8590" font-size="10" text-anchor="end">updated 2026-05-09</text>
-  <text x="28" y="60" fill="#7d8590" font-size="12">Recent work spans Telegram automation tooling, an Android + ASP.NET LLM</text>
-  <text x="28" y="78" fill="#7d8590" font-size="12">chat backend, Windows productivity tools shipped to the Microsoft Store,</text>
-  <text x="28" y="96" fill="#7d8590" font-size="12">and personal infrastructure — dotfiles, profile-card generators, and a</text>
-  <text x="28" y="114" fill="#7d8590" font-size="12">YOLO</text>
-  <text x="28" y="158" fill="#58a6ff" font-size="11" font-weight="600">2026 Apr–May</text>
-  <circle cx="98" cy="154" r="4" fill="#58a6ff"/>
-  <text x="114" y="178" fill="#e6edf3" font-size="13" font-weight="600">Custom GitHub profile cards generator</text>
-  <text x="572" y="178" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/jamminroot_profile_cards</text>
-  <text x="114" y="194" fill="#7d8590" font-size="11">Built a TypeScript pipeline that pulls GitHub data via GraphQL</text>
-  <text x="114" y="210" fill="#7d8590" font-size="11">and renders custom SVG sidebar cards plus an LLM-summarised CV</text>
-  <text x="114" y="226" fill="#7d8590" font-size="11">timeline, replacing a third-party action.</text>
-  <text x="114" y="254" fill="#e6edf3" font-size="13" font-weight="600">Clash.Meta API re-exposure</text>
-  <text x="572" y="254" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/Clash.Meta</text>
-  <text x="114" y="270" fill="#7d8590" font-size="11">Re-exposed `ProxiesWithProviders` and `GetProxyNameList` APIs in</text>
-  <text x="114" y="286" fill="#7d8590" font-size="11">the Mihomo fork to keep FlClash integration working.</text>
-  <line x1="98" y1="158" x2="98" y2="298" stroke="#30363d" stroke-width="1"/>
-  <text x="28" y="326" fill="#58a6ff" font-size="11" font-weight="600">2026 Mar</text>
-  <circle cx="98" cy="322" r="4" fill="#58a6ff"/>
-  <text x="114" y="346" fill="#e6edf3" font-size="13" font-weight="600">Ozwil chat assistant — initial cut</text>
-  <text x="572" y="346" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/ozwil-api</text>
-  <text x="114" y="362" fill="#7d8590" font-size="11">Spun up an Android app + ASP.NET Core backend for an LLM-powered</text>
-  <text x="114" y="378" fill="#7d8590" font-size="11">chat assistant. Initial scaffolding plus tool-call safety rails,</text>
-  <text x="114" y="394" fill="#7d8590" font-size="11">a Markdown rendering composable, Docker healthcheck setup, and</text>
-  <text x="114" y="410" fill="#7d8590" font-size="11">chat</text>
-  <line x1="98" y1="326" x2="98" y2="422" stroke="#30363d" stroke-width="1"/>
-  <text x="28" y="450" fill="#58a6ff" font-size="11" font-weight="600">2026 Feb</text>
-  <circle cx="98" cy="446" r="4" fill="#58a6ff"/>
-  <text x="114" y="470" fill="#e6edf3" font-size="13" font-weight="600">telepilot-2 v0.8.2 release push</text>
-  <text x="572" y="470" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
-  <text x="114" y="486" fill="#7d8590" font-size="11">Shipped a new &#39;album&#39; trigger, fixed an auth race condition on</text>
-  <text x="114" y="502" fill="#7d8590" font-size="11">existing sessions, and modernised CI: bumped n8n test version</text>
-  <text x="114" y="518" fill="#7d8590" font-size="11">1.89 → 2.8.3, added npm 403 retry logic, and cleaned up stale</text>
-  <text x="114" y="534" fill="#7d8590" font-size="11">registry</text>
-  <text x="114" y="562" fill="#e6edf3" font-size="13" font-weight="600">intag v2 on Microsoft Store</text>
-  <text x="572" y="562" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/intag</text>
-  <text x="114" y="578" fill="#7d8590" font-size="11">Polished the Windows Explorer file-tagging tool through to a</text>
-  <text x="114" y="594" fill="#7d8590" font-size="11">v2.4.29 release: added support for additional metadata</text>
-  <text x="114" y="610" fill="#7d8590" font-size="11">properties (#26), shipped a privacy policy, and refreshed</text>
-  <text x="114" y="626" fill="#7d8590" font-size="11">README/store</text>
-  <text x="114" y="654" fill="#e6edf3" font-size="13" font-weight="600">YOLO labeler — built in a day</text>
-  <text x="572" y="654" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/yolo-labeler</text>
-  <text x="114" y="670" fill="#7d8590" font-size="11">Built a small on-host YOLO image labeling tool from scratch in a</text>
-  <text x="114" y="686" fill="#7d8590" font-size="11">single day. Multi-select mark mode, batch delete, Ctrl+Delete</text>
-  <text x="114" y="702" fill="#7d8590" font-size="11">shortcuts, flexible YAML resolution.</text>
-  <text x="114" y="730" fill="#e6edf3" font-size="13" font-weight="600">Neovim IDE config</text>
-  <text x="572" y="730" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/.dotfiles</text>
-  <text x="114" y="746" fill="#7d8590" font-size="11">Stood up a personal Neovim setup: migrated to the 0.11+</text>
-  <text x="114" y="762" fill="#7d8590" font-size="11">`vim.lsp.config` API, updated treesitter, added OSC 52 clipboard</text>
-  <text x="114" y="778" fill="#7d8590" font-size="11">for SSH sessions, wired up a pre-commit secret-detection hook.</text>
-  <line x1="98" y1="450" x2="98" y2="790" stroke="#30363d" stroke-width="1"/>
-  <text x="28" y="818" fill="#58a6ff" font-size="11" font-weight="600">2026 Jan</text>
-  <circle cx="98" cy="814" r="4" fill="#58a6ff"/>
-  <text x="114" y="838" fill="#e6edf3" font-size="13" font-weight="600">telepilot-2 stability work</text>
-  <text x="572" y="838" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
-  <text x="114" y="854" fill="#7d8590" font-size="11">Hardened the TDLib integration: moved session storage to a</text>
-  <text x="114" y="870" fill="#7d8590" font-size="11">stable path outside `node_modules`, restored the required</text>
-  <text x="114" y="886" fill="#7d8590" font-size="11">`apiId/apiHash` parameters to `tdl.createClient()`, version</text>
-  <text x="114" y="902" fill="#7d8590" font-size="11">bumps</text>
-  <line x1="98" y1="818" x2="98" y2="914" stroke="#30363d" stroke-width="1"/>
-  <text x="28" y="942" fill="#58a6ff" font-size="11" font-weight="600">Late 2025</text>
-  <circle cx="98" cy="938" r="4" fill="#58a6ff"/>
-  <text x="114" y="962" fill="#e6edf3" font-size="13" font-weight="600">telepilot-2 fork foundation</text>
-  <text x="572" y="962" fill="#7d8590" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
-  <text x="114" y="978" fill="#7d8590" font-size="11">Forked telepilotco/n8n-nodes-telepilot and stood it up as a</text>
-  <text x="114" y="994" fill="#7d8590" font-size="11">maintained package: Debian + Alpine Docker images, README/docs</text>
-  <text x="114" y="1010" fill="#7d8590" font-size="11">for TelePilot2, initial auth fix work.</text>
-  <line x1="98" y1="942" x2="98" y2="1022" stroke="#30363d" stroke-width="1"/>
-  <text x="28" y="1046" fill="#7d8590" font-size="9">generated from public commit data + LLM summary</text>
+  <rect x="0" y="0" width="600" height="1074" rx="8" ry="8" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="599" height="1073" rx="8" ry="8" fill="none" stroke="#d0d7de"/>
+  <text x="28" y="42" fill="#1f2328" font-size="16" font-weight="700">Recent activity</text>
+  <text x="572" y="42" fill="#656d76" font-size="10" text-anchor="end">updated 2026-05-09</text>
+  <text x="28" y="60" fill="#656d76" font-size="12">Recent work spans Telegram automation tooling, an Android + ASP.NET LLM</text>
+  <text x="28" y="78" fill="#656d76" font-size="12">chat backend, Windows productivity tools shipped to the Microsoft Store,</text>
+  <text x="28" y="96" fill="#656d76" font-size="12">and personal infrastructure — dotfiles, profile-card generators, and a</text>
+  <text x="28" y="114" fill="#656d76" font-size="12">YOLO</text>
+  <text x="28" y="158" fill="#0969da" font-size="11" font-weight="600">2026 Apr–May</text>
+  <circle cx="98" cy="154" r="4" fill="#0969da"/>
+  <text x="114" y="178" fill="#1f2328" font-size="13" font-weight="600">Custom GitHub profile cards generator</text>
+  <text x="572" y="178" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/jamminroot_profile_cards</text>
+  <text x="114" y="194" fill="#656d76" font-size="11">Built a TypeScript pipeline that pulls GitHub data via GraphQL</text>
+  <text x="114" y="210" fill="#656d76" font-size="11">and renders custom SVG sidebar cards plus an LLM-summarised CV</text>
+  <text x="114" y="226" fill="#656d76" font-size="11">timeline, replacing a third-party action.</text>
+  <text x="114" y="254" fill="#1f2328" font-size="13" font-weight="600">Clash.Meta API re-exposure</text>
+  <text x="572" y="254" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/Clash.Meta</text>
+  <text x="114" y="270" fill="#656d76" font-size="11">Re-exposed `ProxiesWithProviders` and `GetProxyNameList` APIs in</text>
+  <text x="114" y="286" fill="#656d76" font-size="11">the Mihomo fork to keep FlClash integration working.</text>
+  <line x1="98" y1="158" x2="98" y2="298" stroke="#d0d7de" stroke-width="1"/>
+  <text x="28" y="326" fill="#0969da" font-size="11" font-weight="600">2026 Mar</text>
+  <circle cx="98" cy="322" r="4" fill="#0969da"/>
+  <text x="114" y="346" fill="#1f2328" font-size="13" font-weight="600">Ozwil chat assistant — initial cut</text>
+  <text x="572" y="346" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/ozwil-api</text>
+  <text x="114" y="362" fill="#656d76" font-size="11">Spun up an Android app + ASP.NET Core backend for an LLM-powered</text>
+  <text x="114" y="378" fill="#656d76" font-size="11">chat assistant. Initial scaffolding plus tool-call safety rails,</text>
+  <text x="114" y="394" fill="#656d76" font-size="11">a Markdown rendering composable, Docker healthcheck setup, and</text>
+  <text x="114" y="410" fill="#656d76" font-size="11">chat</text>
+  <line x1="98" y1="326" x2="98" y2="422" stroke="#d0d7de" stroke-width="1"/>
+  <text x="28" y="450" fill="#0969da" font-size="11" font-weight="600">2026 Feb</text>
+  <circle cx="98" cy="446" r="4" fill="#0969da"/>
+  <text x="114" y="470" fill="#1f2328" font-size="13" font-weight="600">telepilot-2 v0.8.2 release push</text>
+  <text x="572" y="470" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
+  <text x="114" y="486" fill="#656d76" font-size="11">Shipped a new &#39;album&#39; trigger, fixed an auth race condition on</text>
+  <text x="114" y="502" fill="#656d76" font-size="11">existing sessions, and modernised CI: bumped n8n test version</text>
+  <text x="114" y="518" fill="#656d76" font-size="11">1.89 → 2.8.3, added npm 403 retry logic, and cleaned up stale</text>
+  <text x="114" y="534" fill="#656d76" font-size="11">registry</text>
+  <text x="114" y="562" fill="#1f2328" font-size="13" font-weight="600">intag v2 on Microsoft Store</text>
+  <text x="572" y="562" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/intag</text>
+  <text x="114" y="578" fill="#656d76" font-size="11">Polished the Windows Explorer file-tagging tool through to a</text>
+  <text x="114" y="594" fill="#656d76" font-size="11">v2.4.29 release: added support for additional metadata</text>
+  <text x="114" y="610" fill="#656d76" font-size="11">properties (#26), shipped a privacy policy, and refreshed</text>
+  <text x="114" y="626" fill="#656d76" font-size="11">README/store</text>
+  <text x="114" y="654" fill="#1f2328" font-size="13" font-weight="600">YOLO labeler — built in a day</text>
+  <text x="572" y="654" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/yolo-labeler</text>
+  <text x="114" y="670" fill="#656d76" font-size="11">Built a small on-host YOLO image labeling tool from scratch in a</text>
+  <text x="114" y="686" fill="#656d76" font-size="11">single day. Multi-select mark mode, batch delete, Ctrl+Delete</text>
+  <text x="114" y="702" fill="#656d76" font-size="11">shortcuts, flexible YAML resolution.</text>
+  <text x="114" y="730" fill="#1f2328" font-size="13" font-weight="600">Neovim IDE config</text>
+  <text x="572" y="730" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/.dotfiles</text>
+  <text x="114" y="746" fill="#656d76" font-size="11">Stood up a personal Neovim setup: migrated to the 0.11+</text>
+  <text x="114" y="762" fill="#656d76" font-size="11">`vim.lsp.config` API, updated treesitter, added OSC 52 clipboard</text>
+  <text x="114" y="778" fill="#656d76" font-size="11">for SSH sessions, wired up a pre-commit secret-detection hook.</text>
+  <line x1="98" y1="450" x2="98" y2="790" stroke="#d0d7de" stroke-width="1"/>
+  <text x="28" y="818" fill="#0969da" font-size="11" font-weight="600">2026 Jan</text>
+  <circle cx="98" cy="814" r="4" fill="#0969da"/>
+  <text x="114" y="838" fill="#1f2328" font-size="13" font-weight="600">telepilot-2 stability work</text>
+  <text x="572" y="838" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
+  <text x="114" y="854" fill="#656d76" font-size="11">Hardened the TDLib integration: moved session storage to a</text>
+  <text x="114" y="870" fill="#656d76" font-size="11">stable path outside `node_modules`, restored the required</text>
+  <text x="114" y="886" fill="#656d76" font-size="11">`apiId/apiHash` parameters to `tdl.createClient()`, version</text>
+  <text x="114" y="902" fill="#656d76" font-size="11">bumps</text>
+  <line x1="98" y1="818" x2="98" y2="914" stroke="#d0d7de" stroke-width="1"/>
+  <text x="28" y="942" fill="#0969da" font-size="11" font-weight="600">Late 2025</text>
+  <circle cx="98" cy="938" r="4" fill="#0969da"/>
+  <text x="114" y="962" fill="#1f2328" font-size="13" font-weight="600">telepilot-2 fork foundation</text>
+  <text x="572" y="962" fill="#656d76" font-size="10" text-anchor="end">Jamminroot/n8n-nodes-telepilot-2</text>
+  <text x="114" y="978" fill="#656d76" font-size="11">Forked telepilotco/n8n-nodes-telepilot and stood it up as a</text>
+  <text x="114" y="994" fill="#656d76" font-size="11">maintained package: Debian + Alpine Docker images, README/docs</text>
+  <text x="114" y="1010" fill="#656d76" font-size="11">for TelePilot2, initial auth fix work.</text>
+  <line x1="98" y1="942" x2="98" y2="1022" stroke="#d0d7de" stroke-width="1"/>
+  <text x="28" y="1046" fill="#656d76" font-size="9">generated from public commit data + LLM summary</text>
 </svg>

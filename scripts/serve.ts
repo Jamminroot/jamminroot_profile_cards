@@ -11,25 +11,25 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <title>profile cards preview</title>
 <style>
-  :root { color-scheme: dark; }
-  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; margin: 0; padding: 32px; }
+  :root { color-scheme: light; }
+  body { background: #ffffff; color: #1f2328; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; margin: 0; padding: 32px; }
   header { display: flex; align-items: baseline; justify-content: space-between; margin: 0 auto 24px; max-width: 1000px; }
   h1 { margin: 0; font-size: 18px; font-weight: 600; }
-  .meta { color: #7d8590; font-size: 12px; }
+  .meta { color: #656d76; font-size: 12px; }
   .grid { display: grid; grid-template-columns: 1fr 280px; gap: 24px; max-width: 1000px; margin: 0 auto; }
   .left img, .right img { display: block; max-width: 100%; height: auto; }
   .right img { margin-bottom: 16px; }
-  h2 { font-weight: 500; margin: 0 0 8px; color: #7d8590; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
-  .md { background: #0d1117; padding: 24px; border: 1px solid #30363d; border-radius: 8px; line-height: 1.5; font-size: 14px; }
+  h2 { font-weight: 500; margin: 0 0 8px; color: #656d76; font-size: 11px; text-transform: uppercase; letter-spacing: .12em; }
+  .md { background: #f6f8fa; padding: 24px; border: 1px solid #d0d7de; border-radius: 8px; line-height: 1.5; font-size: 14px; }
   .md h1 { font-size: 18px; margin: 0 0 12px; }
-  .md h2 { font-size: 12px; color: #58a6ff; text-transform: none; letter-spacing: 0; margin: 24px 0 8px; }
+  .md h2 { font-size: 12px; color: #0969da; text-transform: none; letter-spacing: 0; margin: 24px 0 8px; }
   .md ul { padding-left: 20px; margin: 8px 0; }
-  .md li { margin: 6px 0; color: #c9d1d9; }
-  .md em { color: #7d8590; }
-  .md code { background: #161b22; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
-  .md hr { border: 0; border-top: 1px solid #30363d; margin: 16px 0; }
-  button { background: #21262d; color: #e6edf3; border: 1px solid #30363d; padding: 4px 10px; font-size: 12px; border-radius: 6px; cursor: pointer; }
-  button:hover { background: #30363d; }
+  .md li { margin: 6px 0; color: #1f2328; }
+  .md em { color: #656d76; }
+  .md code { background: #eaeef2; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+  .md hr { border: 0; border-top: 1px solid #d0d7de; margin: 16px 0; }
+  button { background: #f6f8fa; color: #1f2328; border: 1px solid #d0d7de; padding: 4px 10px; font-size: 12px; border-radius: 6px; cursor: pointer; }
+  button:hover { background: #eaeef2; }
   .row { margin-bottom: 24px; }
   details { margin-top: 24px; max-width: 1000px; margin-left: auto; margin-right: auto; }
   summary { cursor: pointer; color: #7d8590; font-size: 12px; }
