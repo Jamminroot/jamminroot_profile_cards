@@ -66,7 +66,6 @@ function svg(width: number, height: number, label: string, body: string): string
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${esc(label)}">
   <style>${STYLE}</style>
   <rect class="bg" x="0" y="0" width="${width}" height="${height}" rx="8" ry="8"/>
-  <rect class="border" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="8" ry="8" fill="none"/>
   ${body}
 </svg>`;
 }
