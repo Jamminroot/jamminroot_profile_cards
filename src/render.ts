@@ -1,17 +1,28 @@
 import type { ProfileData, ContributionDay, RepoData } from "./github.js";
 
-const T = {
-  bg: "#ffffff",
-  panel: "#f6f8fa",
-  border: "#d0d7de",
-  fg: "#1f2328",
-  muted: "#656d76",
-  accent: "#0969da",
-  accent2: "#1f883d",
-};
-
-const FONT_CSS = `text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }`;
 const CARD_W = 280;
+
+const STYLE = `
+  text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; }
+  .bg { fill: #ffffff; }
+  .panel { fill: #f6f8fa; }
+  .border { stroke: #d0d7de; }
+  .fg { fill: #1f2328; }
+  .muted { fill: #656d76; }
+  .accent { fill: #0969da; }
+  .accent2 { fill: #1f883d; }
+  .accent-stroke { stroke: #0969da; }
+  @media (prefers-color-scheme: dark) {
+    .bg { fill: #0d1117; }
+    .panel { fill: #161b22; }
+    .border { stroke: #30363d; }
+    .fg { fill: #e6edf3; }
+    .muted { fill: #7d8590; }
+    .accent { fill: #58a6ff; }
+    .accent2 { fill: #3fb950; }
+    .accent-stroke { stroke: #58a6ff; }
+  }
+`;
 
 function esc(s: string): string {
   return s
@@ -53,15 +64,15 @@ function wrapText(text: string, maxChars: number, maxLines = 99): string[] {
 
 function svg(width: number, height: number, label: string, body: string): string {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} ${height}" width="${width}" height="${height}" role="img" aria-label="${esc(label)}">
-  <style>${FONT_CSS}</style>
-  <rect x="0" y="0" width="${width}" height="${height}" rx="8" ry="8" fill="${T.bg}"/>
-  <rect x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="8" ry="8" fill="none" stroke="${T.border}"/>
+  <style>${STYLE}</style>
+  <rect class="bg" x="0" y="0" width="${width}" height="${height}" rx="8" ry="8"/>
+  <rect class="border" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="8" ry="8" fill="none"/>
   ${body}
 </svg>`;
 }
 
 function cardTitle(title: string, x = 16, y = 24): string {
-  return `<text x="${x}" y="${y}" fill="${T.muted}" font-size="10" letter-spacing="0.1em">${esc(title.toUpperCase())}</text>`;
+  return `<text class="muted" x="${x}" y="${y}" font-size="10" letter-spacing="0.1em">${esc(title.toUpperCase())}</text>`;
 }
 
 // ---------- Languages card ----------
@@ -70,7 +81,7 @@ function aggregateLanguages(repos: RepoData[]): { name: string; color: string; c
   const map = new Map<string, { color: string; count: number }>();
   for (const r of repos) {
     if (!r.language) continue;
-    const cur = map.get(r.language.name) ?? { color: r.language.color || T.accent, count: 0 };
+    const cur = map.get(r.language.name) ?? { color: r.language.color || "#0969da", count: 0 };
     cur.count += r.totalCommits;
     map.set(r.language.name, cur);
   }
@@ -96,9 +107,9 @@ export function renderLanguages(p: ProfileData): string {
     const pct = ((l.count / total) * 100).toFixed(0);
     const barW = (l.count / total) * innerW;
     out.push(
-      `<text x="${x}" y="${y + 12}" fill="${T.fg}" font-size="11">${esc(trunc(l.name, 18))}</text>`,
-      `<text x="${x + innerW}" y="${y + 12}" fill="${T.muted}" font-size="10" text-anchor="end">${l.count} · ${pct}%</text>`,
-      `<rect x="${x}" y="${y + 16}" width="${innerW}" height="6" rx="3" ry="3" fill="${T.panel}"/>`,
+      `<text class="fg" x="${x}" y="${y + 12}" font-size="11">${esc(trunc(l.name, 18))}</text>`,
+      `<text class="muted" x="${x + innerW}" y="${y + 12}" font-size="10" text-anchor="end">${l.count} · ${pct}%</text>`,
+      `<rect class="panel" x="${x}" y="${y + 16}" width="${innerW}" height="6" rx="3" ry="3"/>`,
       `<rect x="${x}" y="${y + 16}" width="${barW}" height="6" rx="3" ry="3" fill="${l.color}"/>`,
     );
   });
@@ -139,7 +150,7 @@ export function renderHours(p: ProfileData): string {
   const out: string[] = [];
   out.push(cardTitle("commits by hour (utc)"));
   out.push(
-    `<text x="${CARD_W - x0}" y="24" fill="${T.muted}" font-size="9" text-anchor="end">${total} commits</text>`,
+    `<text class="muted" x="${CARD_W - x0}" y="24" font-size="9" text-anchor="end">${total} commits</text>`,
   );
 
   for (let h = 0; h < 24; h++) {
@@ -148,26 +159,27 @@ export function renderHours(p: ProfileData): string {
     const by = baseY - bh;
     const bx = x0 + h * (bw + gap);
     const isPeak = h === peak && hours[h] > 0;
+    const cls = isPeak ? "accent2" : "accent";
     out.push(
-      `<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="1.5" ry="1.5" fill="${isPeak ? T.accent2 : T.accent}" opacity="${(0.4 + ratio * 0.6).toFixed(2)}"/>`,
+      `<rect class="${cls}" x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="1.5" ry="1.5" opacity="${(0.55 + ratio * 0.45).toFixed(2)}"/>`,
     );
   }
 
   for (const h of [0, 6, 12, 18]) {
     const lx = x0 + h * (bw + gap) + bw / 2;
     out.push(
-      `<text x="${lx}" y="${baseY + 12}" fill="${T.muted}" font-size="9" text-anchor="middle">${h.toString().padStart(2, "0")}</text>`,
+      `<text class="muted" x="${lx}" y="${baseY + 12}" font-size="9" text-anchor="middle">${h.toString().padStart(2, "0")}</text>`,
     );
   }
 
   if (total > 0) {
     out.push(
-      `<text x="${x0}" y="${height - 16}" fill="${T.muted}" font-size="10">peak hour</text>`,
-      `<text x="${CARD_W - x0}" y="${height - 16}" fill="${T.fg}" font-size="11" text-anchor="end" font-weight="600">${peak.toString().padStart(2, "0")}:00 UTC</text>`,
+      `<text class="muted" x="${x0}" y="${height - 16}" font-size="10">peak hour</text>`,
+      `<text class="fg" x="${CARD_W - x0}" y="${height - 16}" font-size="11" text-anchor="end" font-weight="600">${peak.toString().padStart(2, "0")}:00 UTC</text>`,
     );
   } else {
     out.push(
-      `<text x="${CARD_W / 2}" y="${baseY / 2 + 16}" fill="${T.muted}" font-size="11" text-anchor="middle">no public commit data</text>`,
+      `<text class="muted" x="${CARD_W / 2}" y="${baseY / 2 + 16}" font-size="11" text-anchor="middle">no public commit data</text>`,
     );
   }
 
@@ -209,7 +221,7 @@ export function renderMonthly(p: ProfileData): string {
   const out: string[] = [];
   out.push(cardTitle("monthly contributions"));
   out.push(
-    `<text x="${CARD_W - x0}" y="24" fill="${T.muted}" font-size="9" text-anchor="end">last 12 months</text>`,
+    `<text class="muted" x="${CARD_W - x0}" y="24" font-size="9" text-anchor="end">last 12 months</text>`,
   );
 
   months.forEach((m, i) => {
@@ -218,15 +230,15 @@ export function renderMonthly(p: ProfileData): string {
     const by = baseY - bh;
     const bx = x0 + i * (bw + gap);
     out.push(
-      `<rect x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2" ry="2" fill="${T.accent2}" opacity="${(0.4 + ratio * 0.6).toFixed(2)}"/>`,
-      `<text x="${bx + bw / 2}" y="${baseY + 12}" fill="${T.muted}" font-size="8" text-anchor="middle">${m.label[0]}</text>`,
+      `<rect class="accent2" x="${bx}" y="${by}" width="${bw}" height="${bh}" rx="2" ry="2" opacity="${(0.55 + ratio * 0.45).toFixed(2)}"/>`,
+      `<text class="muted" x="${bx + bw / 2}" y="${baseY + 12}" font-size="8" text-anchor="middle">${m.label[0]}</text>`,
     );
   });
 
   const total = months.reduce((s, m) => s + m.count, 0);
   out.push(
-    `<text x="${x0}" y="${height - 16}" fill="${T.muted}" font-size="10">total</text>`,
-    `<text x="${CARD_W - x0}" y="${height - 16}" fill="${T.fg}" font-size="11" text-anchor="end" font-weight="600">${total.toLocaleString()}</text>`,
+    `<text class="muted" x="${x0}" y="${height - 16}" font-size="10">total</text>`,
+    `<text class="fg" x="${CARD_W - x0}" y="${height - 16}" font-size="11" text-anchor="end" font-weight="600">${total.toLocaleString()}</text>`,
   );
 
   return svg(CARD_W, height, "Monthly contributions", out.join(""));
@@ -258,32 +270,29 @@ export function renderCVSvg(t: Timeline): string {
   const sections: string[] = [];
   let y = CV_PAD;
 
-  // Heading
   sections.push(
-    `<text x="${CV_PAD}" y="${y + 14}" fill="${T.fg}" font-size="16" font-weight="700">Recent activity</text>`,
-    `<text x="${CV_W - CV_PAD}" y="${y + 14}" fill="${T.muted}" font-size="10" text-anchor="end">updated ${esc(t.generatedAt)}</text>`,
+    `<text class="fg" x="${CV_PAD}" y="${y + 14}" font-size="16" font-weight="700">Recent activity</text>`,
+    `<text class="muted" x="${CV_W - CV_PAD}" y="${y + 14}" font-size="10" text-anchor="end">updated ${esc(t.generatedAt)}</text>`,
   );
   y += 32;
 
-  // Summary
   if (t.summary) {
     const lines = wrapText(t.summary, 72, 4);
     lines.forEach((line, i) => {
       sections.push(
-        `<text x="${CV_PAD}" y="${y + i * 18}" fill="${T.muted}" font-size="12">${esc(line)}</text>`,
+        `<text class="muted" x="${CV_PAD}" y="${y + i * 18}" font-size="12">${esc(line)}</text>`,
       );
     });
     y += lines.length * 18 + 12;
   }
 
-  // Timeline
   const railX = CV_PAD + 70;
   const dotR = 4;
   for (const period of t.periods) {
     const periodY = y + 14;
     sections.push(
-      `<text x="${CV_PAD}" y="${periodY}" fill="${T.accent}" font-size="11" font-weight="600">${esc(period.period)}</text>`,
-      `<circle cx="${railX}" cy="${periodY - 4}" r="${dotR}" fill="${T.accent}"/>`,
+      `<text class="accent" x="${CV_PAD}" y="${periodY}" font-size="11" font-weight="600">${esc(period.period)}</text>`,
+      `<circle class="accent" cx="${railX}" cy="${periodY - 4}" r="${dotR}"/>`,
     );
     const periodStartY = y;
     y += 22;
@@ -292,32 +301,31 @@ export function renderCVSvg(t: Timeline): string {
       const item = period.items[idx];
       const titleY = y + 12;
       sections.push(
-        `<text x="${railX + 16}" y="${titleY}" fill="${T.fg}" font-size="13" font-weight="600">${esc(trunc(item.title, 48))}</text>`,
+        `<text class="fg" x="${railX + 16}" y="${titleY}" font-size="13" font-weight="600">${esc(trunc(item.title, 48))}</text>`,
       );
       if (item.repo) {
         sections.push(
-          `<text x="${CV_W - CV_PAD}" y="${titleY}" fill="${T.muted}" font-size="10" text-anchor="end">${esc(trunc(item.repo, 36))}</text>`,
+          `<text class="muted" x="${CV_W - CV_PAD}" y="${titleY}" font-size="10" text-anchor="end">${esc(trunc(item.repo, 36))}</text>`,
         );
       }
       const descLines = wrapText(item.description, 64, 4);
       descLines.forEach((line, i) => {
         sections.push(
-          `<text x="${railX + 16}" y="${titleY + 16 + i * 16}" fill="${T.muted}" font-size="11">${esc(line)}</text>`,
+          `<text class="muted" x="${railX + 16}" y="${titleY + 16 + i * 16}" font-size="11">${esc(line)}</text>`,
         );
       });
       y += 18 + descLines.length * 16 + 10;
     }
 
-    // rail line through this period block
     sections.push(
-      `<line x1="${railX}" y1="${periodStartY + 14}" x2="${railX}" y2="${y - 4}" stroke="${T.border}" stroke-width="1"/>`,
+      `<line class="border" x1="${railX}" y1="${periodStartY + 14}" x2="${railX}" y2="${y - 4}" stroke-width="1"/>`,
     );
     y += 10;
   }
 
   y += 10;
   sections.push(
-    `<text x="${CV_PAD}" y="${y}" fill="${T.muted}" font-size="9">generated from public commit data + LLM summary</text>`,
+    `<text class="muted" x="${CV_PAD}" y="${y}" font-size="9">generated from public commit data + LLM summary</text>`,
   );
   y += CV_PAD;
 
