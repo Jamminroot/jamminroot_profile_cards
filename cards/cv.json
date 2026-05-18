@@ -1,34 +1,34 @@
 {
-  "generatedAt": "2026-05-09",
-  "summary": "Built and maintained a Telegram integration node for n8n, shipped a cross-platform file-tagging utility to the Microsoft Store, and bootstrapped an Android chat app with an ASP.NET Core backend featuring tool-call safety rails.",
+  "generatedAt": "2026-05-18",
+  "summary": "Heavy focus on automating a personal GitHub profile CV generator with heatmaps, timeline charts, and LLM-driven summaries. Also maintained a forked n8n Telegram node with auth fixes, CI hardening, and a new album trigger.",
   "periods": [
     {
-      "period": "2026 Feb–Mar",
+      "period": "2026 May",
       "items": [
         {
-          "title": "Bootstrapped Ozwil Android app and backend",
-          "repo": "Jamminroot/ozwil-api",
-          "description": "Initialized a new Android app with an ASP.NET Core backend, adding tool-call safety rails, a MarkdownText composable, and chat UI cleanup."
+          "title": "Profile CV generator with charts and LLM summaries",
+          "repo": "Jamminroot/Jamminroot",
+          "description": "Built a pipeline that generates a CV timeline, heatmap, and project cards from GitHub activity, using LLM summarisation with mandatory repo coverage and configurable weights."
         },
         {
-          "title": "Stabilized n8n TelePilot node CI/CD",
-          "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Resolved npm registry errors and auth race conditions in CI, upgraded test infrastructure to n8n 2.8.3, and added a new album trigger."
+          "title": "Heatmap and timeline visual refinements",
+          "repo": "Jamminroot/Jamminroot",
+          "description": "Added Catmull-Rom smoothed pulse charts, empty-week panel slots, multi-identity author matching, and restructured the README with sidebar cards."
         }
       ]
     },
     {
-      "period": "2026 Jan",
+      "period": "2026 Feb",
       "items": [
         {
-          "title": "Released Intag v2.0 on Microsoft Store",
-          "repo": "Jamminroot/intag",
-          "description": "Shipped version 2.0 of the Windows file-tagging utility with support for additional metadata properties and a Microsoft Store listing."
+          "title": "CI hardening and auth race-condition fixes",
+          "repo": "Jamminroot/n8n-nodes-telepilot-2",
+          "description": "Resolved auth state race conditions, fixed npm 403 errors with retry logic, upgraded CI to n8n 2.8.3, and moved TDLib session storage to a stable path."
         },
         {
-          "title": "Fixed TDLib session persistence in n8n node",
+          "title": "New album trigger for Telegram node",
           "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Moved TDLib session storage to a stable path outside node_modules to prevent data loss across updates."
+          "description": "Added an album trigger to the n8n Telegram node and updated publish workflows for the forked package name."
         }
       ]
     },
@@ -36,9 +36,9 @@
       "period": "2025 Aug–Sep",
       "items": [
         {
-          "title": "Added Docker deployment support for n8n TelePilot node",
+          "title": "Docker deployment and auth work on TelePilot2",
           "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Created Debian-based and Alpine Linux Docker configurations for deploying n8n with the TelePilot2 node."
+          "description": "Added Debian and Alpine Docker deployment support for n8n with TelePilot2, and started work on auth fixes."
         }
       ]
     }
