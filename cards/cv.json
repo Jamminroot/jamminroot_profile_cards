@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-05-18",
-  "summary": "Heavy focus on automating a personal GitHub profile CV generator with heatmaps, timeline charts, and LLM-driven summaries. Also maintained a forked n8n Telegram node with auth fixes, CI hardening, and a new album trigger.",
+  "generatedAt": "2026-06-01",
+  "summary": "Built an automated CV/portfolio pipeline driven by GitHub activity, and maintained a custom n8n node for Telegram automation, fixing auth races and CI stability.",
   "periods": [
     {
       "period": "2026 May",
       "items": [
         {
-          "title": "Profile CV generator with charts and LLM summaries",
+          "title": "CV profile pipeline with heatmap and timeline",
           "repo": "Jamminroot/Jamminroot",
-          "description": "Built a pipeline that generates a CV timeline, heatmap, and project cards from GitHub activity, using LLM summarisation with mandatory repo coverage and configurable weights."
+          "description": "Developed an automated SVG/markdown CV pipeline that generates activity heatmaps, timeline blockquotes, and project cards from GitHub commits, including a PDF with a hidden AI-scanner prompt."
         },
         {
-          "title": "Heatmap and timeline visual refinements",
+          "title": "Repo weighting, filtering, and LLM integration",
           "repo": "Jamminroot/Jamminroot",
-          "description": "Added Catmull-Rom smoothed pulse charts, empty-week panel slots, multi-identity author matching, and restructured the README with sidebar cards."
+          "description": "Added REPO_WEIGHTS config for importance weighting, EXCLUDED_REPOS_REGEX filtering, private repo discovery, and LLM payload injection to enforce coverage of top repos in generated CV content."
         }
       ]
     },
@@ -21,24 +21,34 @@
       "period": "2026 Feb",
       "items": [
         {
-          "title": "CI hardening and auth race-condition fixes",
+          "title": "CI fixes for n8n 2.x compatibility",
           "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Resolved auth state race conditions, fixed npm 403 errors with retry logic, upgraded CI to n8n 2.8.3, and moved TDLib session storage to a stable path."
+          "description": "Upgraded CI test environment from n8n 1.89.0 to 2.8.3, added retry logic for transient npm 403 errors, and removed stale npm and Verdaccio registry configs."
         },
         {
-          "title": "New album trigger for Telegram node",
+          "title": "Auth race condition and session fixes",
           "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Added an album trigger to the n8n Telegram node and updated publish workflows for the forked package name."
+          "description": "Fixed auth race condition causing unexpected authorization states, improved session progression handling, and moved TDLib storage to a stable path outside node_modules."
         }
       ]
     },
     {
-      "period": "2025 Aug–Sep",
+      "period": "2026 Jan",
       "items": [
         {
-          "title": "Docker deployment and auth work on TelePilot2",
+          "title": "New album trigger for TelePilot2",
           "repo": "Jamminroot/n8n-nodes-telepilot-2",
-          "description": "Added Debian and Alpine Docker deployment support for n8n with TelePilot2, and started work on auth fixes."
+          "description": "Added a new 'album' trigger to the TelePilot2 n8n node and restored required apiId/apiHash params for tdl.createClient()."
+        }
+      ]
+    },
+    {
+      "period": "2025 Sep",
+      "items": [
+        {
+          "title": "Docker deployment for n8n with TelePilot2",
+          "repo": "Jamminroot/n8n-nodes-telepilot-2",
+          "description": "Added Debian-based and Alpine Linux Docker deployment support for n8n with the TelePilot2 node, along with updated documentation."
         }
       ]
     }

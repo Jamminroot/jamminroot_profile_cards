@@ -1,22 +1,26 @@
 # Recent activity timeline
 
-> Updated 2026-05-18
+> Updated 2026-06-01
 
-Heavy focus on automating a personal GitHub profile CV generator with heatmaps, timeline charts, and LLM-driven summaries. Also maintained a forked n8n Telegram node with auth fixes, CI hardening, and a new album trigger.
+Built an automated CV/portfolio pipeline driven by GitHub activity, and maintained a custom n8n node for Telegram automation, fixing auth races and CI stability.
 
 ## 2026 May
 
-- **Profile CV generator with charts and LLM summaries** *(Jamminroot/Jamminroot)* — Built a pipeline that generates a CV timeline, heatmap, and project cards from GitHub activity, using LLM summarisation with mandatory repo coverage and configurable weights.
-- **Heatmap and timeline visual refinements** *(Jamminroot/Jamminroot)* — Added Catmull-Rom smoothed pulse charts, empty-week panel slots, multi-identity author matching, and restructured the README with sidebar cards.
+- **CV profile pipeline with heatmap and timeline** *(Jamminroot/Jamminroot)* — Developed an automated SVG/markdown CV pipeline that generates activity heatmaps, timeline blockquotes, and project cards from GitHub commits, including a PDF with a hidden AI-scanner prompt.
+- **Repo weighting, filtering, and LLM integration** *(Jamminroot/Jamminroot)* — Added REPO_WEIGHTS config for importance weighting, EXCLUDED_REPOS_REGEX filtering, private repo discovery, and LLM payload injection to enforce coverage of top repos in generated CV content.
 
 ## 2026 Feb
 
-- **CI hardening and auth race-condition fixes** *(Jamminroot/n8n-nodes-telepilot-2)* — Resolved auth state race conditions, fixed npm 403 errors with retry logic, upgraded CI to n8n 2.8.3, and moved TDLib session storage to a stable path.
-- **New album trigger for Telegram node** *(Jamminroot/n8n-nodes-telepilot-2)* — Added an album trigger to the n8n Telegram node and updated publish workflows for the forked package name.
+- **CI fixes for n8n 2.x compatibility** *(Jamminroot/n8n-nodes-telepilot-2)* — Upgraded CI test environment from n8n 1.89.0 to 2.8.3, added retry logic for transient npm 403 errors, and removed stale npm and Verdaccio registry configs.
+- **Auth race condition and session fixes** *(Jamminroot/n8n-nodes-telepilot-2)* — Fixed auth race condition causing unexpected authorization states, improved session progression handling, and moved TDLib storage to a stable path outside node_modules.
 
-## 2025 Aug–Sep
+## 2026 Jan
 
-- **Docker deployment and auth work on TelePilot2** *(Jamminroot/n8n-nodes-telepilot-2)* — Added Debian and Alpine Docker deployment support for n8n with TelePilot2, and started work on auth fixes.
+- **New album trigger for TelePilot2** *(Jamminroot/n8n-nodes-telepilot-2)* — Added a new 'album' trigger to the TelePilot2 n8n node and restored required apiId/apiHash params for tdl.createClient().
+
+## 2025 Sep
+
+- **Docker deployment for n8n with TelePilot2** *(Jamminroot/n8n-nodes-telepilot-2)* — Added Debian-based and Alpine Linux Docker deployment support for n8n with the TelePilot2 node, along with updated documentation.
 
 ---
 *Generated from public commit data + LLM summary.*
